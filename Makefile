@@ -25,6 +25,9 @@ build-slim:
 build-jdk11:
 	docker build --file 11/debian/buster/hotspot/Dockerfile .
 
+build-rhel:
+	docker build --file 8/rhel/rhel8.3/hotspot/Dockerfile .
+
 build-centos:
 	docker build --file 8/centos/centos8/hotspot/Dockerfile .
 
@@ -65,6 +68,9 @@ test-slim: test-run-slim
 
 test-jdk11: DIRECTORY=11/debian/buster/hotspot
 test-jdk11: test-run-jdk11
+
+test-rhel: DIRECTORY=8/rhel/rhel8.3/hotspot
+test-rhel: test-run-rhel
 
 test-centos: DIRECTORY=8/centos/centos8/hotspot
 test-centos: test-run-centos
